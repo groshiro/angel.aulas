@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aulas Particulares de Inglês - Alcance a Fluência</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* RESET BÁSICO E TIPOGRAFIA */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        :root {
+            --cor-principal: #007bff; /* Azul vibrante */
+            --cor-secundaria: #6c757d; /* Cinza */
+            --cor-fundo: #f8f9fa; /* Cinza claro */
+            --cor-texto: #333;
+            --cor-clara: #ffffff;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--cor-texto);
+            background-color: var(--cor-clara);
+        }
+
+        /* UTILIDADES GERAIS */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn-cta {
+            display: inline-block;
+            background-color: var(--cor-principal);
+            color: var(--cor-clara);
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-cta:hover {
+            background-color: #0056b3; /* Tom mais escuro */
+        }
+
+        /* HEADER */
+        header {
+            background-color: var(--cor-clara);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo a {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--cor-principal);
+            text-decoration: none;
+        }
+
+        nav a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: var(--cor-texto);
+            font-weight: 500;
+        }
+
+        /* HERO SECTION - COM IMAGEM DE FUNDO */
+        #hero {
+            /* ------------------------------------- */
+            /* PROPRIEDADES DE IMAGEM DE FUNDO AQUI */
+            /* ------------------------------------- */
+            background-image: url('D:/fontes/fones-de-ouvido-usados-para-aprender-um-novo-idioma.jpg'); 
+            background-size: cover; 
+            background-position: center center;
+            background-repeat: no-repeat;
+            
+            /* SOBREPOSIÇÃO ESCURA para garantir leitura do texto branco */
+            background-color: rgba(0, 0, 0, 0.5);
+            background-blend-mode: overlay; 
+            /* ------------------------------------- */
+            
+            color: var(--cor-clara);
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        #hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        #hero p {
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+        
+        /* SEÇÕES GERAIS */
+        section {
+            padding: 80px 0;
+        }
+
+        .secao-clara {
+            background-color: var(--cor-fundo);
+        }
+
+        .secao-escura {
+            background-color: var(--cor-clara);
+        }
+
+        h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--cor-principal);
+        }
+
+        /* METODOLOGIA E SERVIÇOS (LAYOUT DE COLUNAS) */
+        .servicos-grid {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .servico-card {
+            flex-basis: 30%;
+            padding: 30px;
+            background: var(--cor-clara);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .servico-card h3 {
+            color: var(--cor-principal);
+            margin-bottom: 15px;
+        }
+
+        /* PROFESSOR */
+        #professor {
+            text-align: center;
+        }
+        
+        #professor img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 5px solid var(--cor-principal);
+        }
+
+        /* DEPOIMENTOS */
+        .depoimentos-grid {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .depoimento-card {
+            flex-basis: 45%;
+            background: var(--cor-clara);
+            padding: 25px;
+            border-left: 5px solid var(--cor-principal);
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+
+        .depoimento-card p strong {
+            display: block;
+            margin-top: 10px;
+            font-weight: 600;
+            color: var(--cor-principal);
+            font-style: normal;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--cor-secundaria);
+            color: var(--cor-clara);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        footer nav a {
+            color: var(--cor-clara);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer p {
+            margin-top: 20px;
+            font-size: 0.85rem;
+        }
+
+        /* RESPONSIVIDADE BÁSICA */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+            }
+
+            nav {
+                margin-top: 15px;
+            }
+
+            nav a {
+                margin: 0 10px;
+            }
+
+            #hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .servicos-grid, .depoimentos-grid {
+                flex-direction: column;
+            }
+
+            .depoimento-card, .servico-card {
+                flex-basis: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="#">Teacher Angélica Simone Lopes</a>
+            </div>
+            <nav>
+                <a href="#metodologia">Metodologia</a>
+                <a href="#professor">Sobre Mim</a>
+                <a href="#pacotes">Pacotes</a>
+                <a href="https://wa.me/5511983461978?text=Olá,%20gostaria%20de%20agendar%20a%20aula%20experimental%20gratuita%20que%20vi%20no%20site." class="btn-cta">Agendar Aula</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h1>Alcance a Fluência Rápido com Aulas 100% Personalizadas.</h1>
+            <p>Seu Plano de Inglês desenhado para o seu objetivo: carreira, viagem ou certificação.</p>
+            <a href="https://wa.me/5511983461978?text=Olá,%20gostaria%20de%20agendar%20a%20aula%20experimental%20gratuita%20que%20vi%20no%20site." class="btn-cta" target="_blank">Comece Hoje! Aula Experimental Gratuita</a>
+        </div>
+    </section>
+
+    <section id="metodologia" class="secao-clara">
+        <div class="container">
+            <h2>Como Você Vai Aprender</h2>
+            <div class="servicos-grid">
+                <div class="servico-card">
+                    <h3>Foco em Conversação</h3>
+                    <p>Desde a primeira aula, o foco é praticar o inglês que você realmente usará no dia a dia e no trabalho.</p>
+                </div>
+                <div class="servico-card">
+                    <h3>Plano Sob Medida</h3>
+                    <p>As aulas são adaptadas ao seu ritmo e aos seus interesses, garantindo motivação e resultados.</p>
+                </div>
+                <div class="servico-card">
+                    <h3>Materiais Inclusos</h3>
+                    <p>Acesso a materiais digitais, vídeos e artigos relevantes sem custo adicional de livros didáticos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="professor" class="secao-escura">
+        <div class="container">
+            <h2>Conheça sua Professora</h2>
+            <img src="/angel.aulas/fontes/Angel.jpeg" alt="Angélica Simone Lopes">
+            <p style="max-width: 800px; margin: 0 auto 20px;">
+                Olá! Sou Angélica Simone Lopes, e minha paixão é transformar a relação dos alunos com o inglês. 
+                Sou formado em Letras, morei [País] por 5 anos e sou certificado por [Certificação, ex: Cambridge/TOEFL]. 
+                Minha missão é te dar a confiança e a fluência que você precisa para conquistar seus objetivos.
+            </p>
+            <a href="https://linkedin.com/in/angélica-lopes-20613715" target="_blank" style="color: var(--cor-principal); text-decoration: none; font-weight: 600;">Veja meu LinkedIn</a>
+        </div>
+    </section>
+
+    <section id="depoimentos" class="secao-clara">
+        <div class="container">
+            <h2>O Que Dizem Meus Alunos</h2>
+            <div class="depoimentos-grid">
+                <div class="depoimento-card">
+                    "Em 6 meses, saí do básico e consegui fazer minha primeira reunião em inglês. A metodologia focada em business fez toda a diferença!"
+                    <p><strong>João S. | Analista de Marketing</strong></p>
+                </div>
+                <div class="depoimento-card">
+                    "O curso preparatório para o IELTS foi direto ao ponto. Consegui a nota que precisava para o meu intercâmbio logo na primeira tentativa!"
+                    <p><strong>Mariana L. | Estudante</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pacotes" class="secao-escura" style="text-align: center;">
+        <div class="container">
+            <h2>Pronto para Começar?</h2>
+            <p style="font-size: 1.25rem; margin-bottom: 40px;">Escolha o plano ideal para a sua jornada.</p>
+            
+            <a href="https://wa.me/+5511983461978" class="btn-cta" style="font-size: 1.2rem; padding: 15px 40px;">
+                Fale Comigo no WhatsApp e Tire Suas Dúvidas
+            </a>
+			<br>
+			<a href="https://www.instagram.com/ange.teacher/" target="_blank">
+				<img src="/angel.aulas/fontes/inst.jpg" alt="Instagram Profile" style="width: 30px; height: 30px;">
+				</a>
+			<a href="https://linkedin.com/in/angélica-lopes-20613715/" target="_blank">
+			<img src="/angel.aulas/fontes/linkedin.jpg" alt="Linkedin Profile" style="width: 30px; height: 30px;">
+			</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <nav>
+                <a href="#metodologia">Metodologia</a> | 
+                <a href="#professor">Sobre</a> | 
+                <a href="#pacotes">Preços</a> | 
+                <a href="mailto:sangelica_s_lopes@yahoo.com.br">Email</a>
+			</nav>
+            <p>
+                Contato: (11) 98346-1978 | E-mail: angelica_s_lopes@yahoo.com.br
+            </p>
+            <p>&copy; 2025 Teacher Angélica Simone Lopes. Todos os direitos reservados.</p>
+        </div>
+	</footer>
+
+</body>
+</html>
